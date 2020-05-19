@@ -13,6 +13,9 @@
 		374C88C32473F3790059495F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374C88C12473F3790059495F /* Main.storyboard */; };
 		374C88C52473F37E0059495F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374C88C42473F37E0059495F /* Assets.xcassets */; };
 		374C88C82473F37E0059495F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374C88C62473F37E0059495F /* LaunchScreen.storyboard */; };
+		374C88D32473F82D0059495F /* CONTENTLISTINGPAGE-PAGE3.json in Resources */ = {isa = PBXBuildFile; fileRef = 374C88D02473F82D0059495F /* CONTENTLISTINGPAGE-PAGE3.json */; };
+		374C88D42473F82D0059495F /* CONTENTLISTINGPAGE-PAGE1.json in Resources */ = {isa = PBXBuildFile; fileRef = 374C88D12473F82D0059495F /* CONTENTLISTINGPAGE-PAGE1.json */; };
+		374C88D52473F82D0059495F /* CONTENTLISTINGPAGE-PAGE2.json in Resources */ = {isa = PBXBuildFile; fileRef = 374C88D22473F82D0059495F /* CONTENTLISTINGPAGE-PAGE2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		374C88C42473F37E0059495F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		374C88C72473F37E0059495F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		374C88C92473F37E0059495F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		374C88D02473F82D0059495F /* CONTENTLISTINGPAGE-PAGE3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "CONTENTLISTINGPAGE-PAGE3.json"; sourceTree = "<group>"; };
+		374C88D12473F82D0059495F /* CONTENTLISTINGPAGE-PAGE1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "CONTENTLISTINGPAGE-PAGE1.json"; sourceTree = "<group>"; };
+		374C88D22473F82D0059495F /* CONTENTLISTINGPAGE-PAGE2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "CONTENTLISTINGPAGE-PAGE2.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		374C88BA2473F3790059495F /* DiagnalTest */ = {
 			isa = PBXGroup;
 			children = (
+				374C88CF2473F8190059495F /* JsonFiles */,
 				374C88BB2473F3790059495F /* AppDelegate.swift */,
 				374C88BD2473F3790059495F /* SceneDelegate.swift */,
 				374C88BF2473F3790059495F /* ViewController.swift */,
@@ -65,6 +72,16 @@
 				374C88C92473F37E0059495F /* Info.plist */,
 			);
 			path = DiagnalTest;
+			sourceTree = "<group>";
+		};
+		374C88CF2473F8190059495F /* JsonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				374C88D12473F82D0059495F /* CONTENTLISTINGPAGE-PAGE1.json */,
+				374C88D22473F82D0059495F /* CONTENTLISTINGPAGE-PAGE2.json */,
+				374C88D02473F82D0059495F /* CONTENTLISTINGPAGE-PAGE3.json */,
+			);
+			path = JsonFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +142,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				374C88D32473F82D0059495F /* CONTENTLISTINGPAGE-PAGE3.json in Resources */,
 				374C88C82473F37E0059495F /* LaunchScreen.storyboard in Resources */,
+				374C88D42473F82D0059495F /* CONTENTLISTINGPAGE-PAGE1.json in Resources */,
+				374C88D52473F82D0059495F /* CONTENTLISTINGPAGE-PAGE2.json in Resources */,
 				374C88C52473F37E0059495F /* Assets.xcassets in Resources */,
 				374C88C32473F3790059495F /* Main.storyboard in Resources */,
 			);
