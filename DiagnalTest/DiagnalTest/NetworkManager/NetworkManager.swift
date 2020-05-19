@@ -16,7 +16,7 @@ class ApiManager{
     var request : NSMutableURLRequest = NSMutableURLRequest()
     var activityIndicator : UIActivityIndicatorView?
     
-    func getUserData(fileNameStr:String,view:UIView,_ complition: @escaping ([Content]?)->()) {
+    func getUserData(fileNameStr:String,_ complition: @escaping ([Content]?)->()) {
             
         if let path = Bundle.main.path(forResource: fileNameStr, ofType: "json") {
             do {
