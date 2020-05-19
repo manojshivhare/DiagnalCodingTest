@@ -16,7 +16,6 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     var isLoadingList:Bool?
     var pageNumber = 1
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         callApi(fileNameStr: "CONTENTLISTINGPAGE-PAGE\(pageNumber)")
@@ -57,16 +56,11 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         return UICollectionViewCompositionalLayout(section: section)
     }
 
-    //call function for pagination
-       func loadMoreData() {
-           pageNumber = pageNumber + 1
-           callApi(fileNameStr: "CONTENTLISTINGPAGE-PAGE\(pageNumber)")
-       }
 }
 
 extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return self.movieDataArr?.count ?? 0
+        return self.movieDataArr?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -75,10 +69,28 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.item == self.movieDataArr!.count - 1 {  //numberofitem count
+    //MARK: scrollview delegate
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        print("scrollViewWillBeginDragging")
+        isLoadingList = false
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        print("scrollViewDidEndDragging")
+        if ((movieCollectionView.contentOffset.y + movieCollectionView.frame.size.height) >= movieCollectionView.contentSize.height)
+        {
+            if !isLoadingList!{
+                isLoadingList = true
                 loadMoreData()
             }
+        }
+    }
+    
+    //call function for pagination
+    func loadMoreData() {
+        pageNumber = pageNumber + 1
+        callApi(fileNameStr: "CONTENTLISTINGPAGE-PAGE\(pageNumber)")
     }
 }
 

@@ -16,7 +16,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     var dataModelDic: Content! {
         didSet {
-            movieImageView.image = UIImage(named: self.dataModelDic.moviePoster ?? "placeholder_for_missing_posters")
+            movieImageView.image = UIImage(named: self.dataModelDic.moviePoster)
             //set movie name
             self.movieNameLabel.text = self.dataModelDic.movieName
         }
