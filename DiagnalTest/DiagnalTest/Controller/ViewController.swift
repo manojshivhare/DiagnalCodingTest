@@ -18,11 +18,13 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callApi(fileNameStr: "CONTENTLISTINGPAGE-PAGE\(pageNumber)")
         movieCollectionView.collectionViewLayout = createCollectionViewLayout()
+        
+        callApiAndGetData(fileNameStr: "CONTENTLISTINGPAGE-PAGE\(pageNumber)")
     }
     
-    func callApi(fileNameStr:String) {
+    //MARK: Api Call
+    func callApiAndGetData(fileNameStr:String) {
         ApiManager.shared.getUserData(fileNameStr: fileNameStr) { (content) in
             //print(content as Any)
             self.movieDataArr?.removeAll()
@@ -59,6 +61,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
 }
 
 extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.movieDataArr?.count ?? 0
     }
@@ -69,7 +72,7 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate {
         return cell
     }
     
-    //MARK: scrollview delegate
+    //MARK: scrollview delegate method
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
         print("scrollViewWillBeginDragging")
@@ -87,10 +90,10 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate {
         }
     }
     
-    //call function for pagination
+    //MARK: call function for pagination and load more data
     func loadMoreData() {
         pageNumber = pageNumber + 1
-        callApi(fileNameStr: "CONTENTLISTINGPAGE-PAGE\(pageNumber)")
+        callApiAndGetData(fileNameStr: "CONTENTLISTINGPAGE-PAGE\(pageNumber)")
     }
 }
 
