@@ -16,8 +16,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     var dataModelDic: Content! {
         didSet {
-            movieImageView.image = UIImage(named: self.dataModelDic.moviePoster)
-            //set movie name
+            self.movieImageView.image = UIImage(named: self.dataModelDic.moviePoster)
             self.movieNameLabel.text = self.dataModelDic.movieName
         }
     }
